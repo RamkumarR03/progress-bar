@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: yellow;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.progress-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+.progress {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background-color: green;
+    z-index: -1;
+    transform: translateY(-50%);
+    transition: width 0.3s;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    border: 3px solid #ccc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: #ccc;
+    transition: all 0.3s;
+}
+.line{
+    width: 40px;
+    height: 10px;
+    color: black;
+}
+
+.circle::before {
+    content: attr(data-content);
+}
+
+.circle.active {
+    border-color: green;
+    color: green;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+   
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+#next{
+    background-color: violet;color: black;
+}
+#prev{
+    background-color: darkolivegreen;
+}
